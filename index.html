@@ -644,7 +644,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="https://api.web3forms.com/submit" method="POST" onsubmit="sendEmail()" role="form" class="php-email-form">
+            <form action="https://api.web3forms.com/submit" method="POST" onsubmit="sendToWhatsapp()" role="form" class="php-email-form">
             <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form"> -->
               <input type="hidden" name="access_key" value="f9ce02a8-5864-4ff0-a5e6-4b09b04f9b45">
               <div class="row">
@@ -782,6 +782,22 @@
 //   message => alert(message)
 // );}
 alert("Messege sent Sucessfully")}
+function sendToWhatsapp(){
+	let number = "+918972947446";
+
+	let name = document.getElementById('name').value;
+	let email = document.getElementById('email').value;
+	let subject = document.getElementById('subject').value;
+  let body = document.getElementById('body').value;
+
+	var url = "https://wa.me/" + number + "?text="
+	+ "Name : " +name+ "%0a"
+	+ "Email : " +email+ "%0a"
+	+ "Subject : " +subject + "%0a"
+  +"Body : " +body+ "%0a%0a";
+
+	window.open(url, '_blank').focus();
+}
   </script>
 
 </body>
